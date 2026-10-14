@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таблиці в CSS — демонстрація</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <a class="wordmark" href="#top" aria-label="Таблична — на початок">
+          <span class="wordmark-mark" aria-hidden="true">T</span>
+          Таблична
+        </a>
+        <span class="edition">Міні-довідник CSS <span>№ 01</span></span>
+      </header>
+
+      <section class="intro" id="top" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> HTML × CSS · 7 прийомів</p>
+        <h1 id="page-title">Таблиці, яким<br />є що <em>показати.</em></h1>
+        <div class="intro-bottom">
+          <p class="intro-copy">Зручна таблиця — це не просто рамки. Пограйтеся з відступами, межами, вирівнюванням і станами рядків.</p>
+          <a class="jump-link" href="#examples">До прикладів <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="section main-demo" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">01 / ЩОДЕННА РОБОТА</p>
+            <h2 id="projects-title">Таблиця проєктів</h2>
+          </div>
+          <p class="section-note">Наведіть курсор на рядок.<br />На вузькому екрані таблицю можна прокручувати.</p>
+        </div>
+
+        <div class="table-scroll" role="region" aria-label="Проєкти та їхній статус" tabindex="0">
+          <table class="project-table">
+            <caption>Огляд команди · жовтень 2026</caption>
+            <colgroup>
+              <col class="col-project" />
+              <col class="col-status" />
+              <col class="col-owner" />
+              <col class="col-date" />
+              <col class="col-progress" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">Проєкт</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Відповідальний</th>
+                <th scope="col">Дедлайн</th>
+                <th scope="col" class="progress-heading">Готовність</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="project-code">A1</span> Новий сайт</th>
+                <td><span class="status status-active"><i></i>У роботі</span></td>
+                <td>Олена Коваль</td>
+                <td><time datetime="2026-10-22">22 жовтня</time></td>
+                <td class="progress-cell"><progress value="72" max="100" aria-label="Готовність: 72 відсотки">72%</progress><span>72%</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="project-code">B2</span> Мобільний застосунок</th>
+                <td><span class="status status-review"><i></i>Перевірка</span></td>
+                <td>Марко Левченко</td>
+                <td><time datetime="2026-10-18">18 жовтня</time></td>
+                <td class="progress-cell"><progress value="91" max="100" aria-label="Готовність: 91 відсоток">91%</progress><span>91%</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="project-code">C3</span> База знань</th>
+                <td><span class="status status-planned"><i></i>Заплановано</span></td>
+                <td>Ірина Мельник</td>
+                <td><time datetime="2026-11-04">4 листопада</time></td>
+                <td class="progress-cell"><progress value="28" max="100" aria-label="Готовність: 28 відсотків">28%</progress><span>28%</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="project-code">D4</span> Дизайн-система</th>
+                <td><span class="status status-done"><i></i>Готово</span></td>
+                <td>Данило Бойко</td>
+                <td><time datetime="2026-10-10">10 жовтня</time></td>
+                <td class="progress-cell"><progress value="100" max="100" aria-label="Готовність: 100 відсотків">100%</progress><span>100%</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="project-code">E5</span> Розсилка</th>
+                <td><span class="status status-active"><i></i>У роботі</span></td>
+                <td>Софія Гнатюк</td>
+                <td><time datetime="2026-10-29">29 жовтня</time></td>
+                <td class="progress-cell"><progress value="54" max="100" aria-label="Готовність: 54 відсотки">54%</progress><span>54%</span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="4">Середня готовність</th>
+                <td class="summary-value">69%</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="table-caption"><span>5 записів</span><span>Сортування та фільтрація потребують JavaScript</span></p>
+      </section>
+
+      <section class="section" id="examples" aria-labelledby="examples-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">02 / ПОРІВНЯННЯ</p>
+            <h2 id="examples-title">Та сама таблиця. Інше відчуття.</h2>
+          </div>
+          <p class="section-note">Дві властивості, що помітно змінюють<br />ритм і щільність даних.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <article class="comparison-example">
+            <div class="example-label"><span>А</span><code>border-collapse: collapse</code></div>
+            <table class="mini-table mini-collapse">
+              <caption>Межі зливаються</caption>
+              <thead><tr><th scope="col">Місяць</th><th scope="col">Замовлення</th><th scope="col">Зміна</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Вересень</th><td>128</td><td>+8%</td></tr>
+                <tr><th scope="row">Жовтень</th><td>146</td><td>+14%</td></tr>
+              </tbody>
+            </table>
+            <p class="example-description">Одна спільна межа між комірками — для щільної сітки.</p>
+          </article>
+
+          <article class="comparison-example">
+            <div class="example-label"><span>Б</span><code>border-collapse: separate</code></div>
+            <table class="mini-table mini-separate">
+              <caption>Між комірками є повітря</caption>
+              <thead><tr><th scope="col">Місяць</th><th scope="col">Замовлення</th><th scope="col">Зміна</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Вересень</th><td>128</td><td>+8%</td></tr>
+                <tr><th scope="row">Жовтень</th><td>146</td><td>+14%</td></tr>
+                <tr><th scope="row">Листопад</th><td>—</td><td></td></tr>
+              </tbody>
+            </table>
+            <p class="example-description">Відстань через <code>border-spacing</code>; порожню комірку приховує <code>empty-cells: hide</code>.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section property-section" aria-labelledby="properties-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">03 / ШПАРГАЛКА</p>
+            <h2 id="properties-title">Що ще можна налаштувати</h2>
+          </div>
+          <p class="section-note">Кілька властивостей, які керують<br />структурою та читабельністю.</p>
+        </div>
+
+        <div class="property-list">
+          <div class="property-row">
+            <code>table-layout</code>
+            <p><strong>Розподіл ширини.</strong> <code>auto</code> враховує вміст; <code>fixed</code> дає передбачувані колонки.</p>
+            <span class="property-icon layout-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="property-row">
+            <code>caption-side</code>
+            <p><strong>Позиція підпису.</strong> Розмістіть назву таблиці зверху або знизу.</p>
+            <span class="property-icon caption-icon" aria-hidden="true"><i></i><i></i></span>
+          </div>
+          <div class="property-row">
+            <code>empty-cells</code>
+            <p><strong>Порожні комірки.</strong> У режимі <code>separate</code> їхні межі можна показати або приховати.</p>
+            <span class="property-icon empty-icon" aria-hidden="true"><i></i></span>
+          </div>
+          <div class="property-row">
+            <code>vertical-align</code>
+            <p><strong>Вирівнювання по вертикалі.</strong> Задайте <code>top</code>, <code>middle</code> або <code>bottom</code> для вмісту комірок.</p>
+            <span class="property-icon align-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Таблична <span class="footer-mark">×</span> CSS</span>
+        <span>Маленькі правила. Велика різниця.</span>
+      </footer>
+    </main>
+  </body>
+</html>
